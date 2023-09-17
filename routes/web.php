@@ -37,8 +37,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::get('/testing', [TestingController::class, 'saleList'])->name('get.saleList');
-Route::get('/testing-demo', function () {
+
+// DEMO
+// Route::get('/testing', [TestingController::class, 'deleteCategory'])->name('delete.category');
+// Route::get('/testing', [TestingController::class, 'addCategory'])->name('post.category');
+// Route::get('/testing', [TestingController::class, 'getSaleLists'])->name('get.saleList');
+// Route::get('/testing-demo', function () {
     // return (new DearApi)->get('saleList');
     // return (new DearApi)->get('saleList', [
     //     'Page' => '5'
@@ -48,7 +52,7 @@ Route::get('/testing-demo', function () {
     // return (new TestApi)->get('comments', [
     //     'postId' => '2'
     // ]);
-});
+// });
 
 require __DIR__.'/auth.php';
 
