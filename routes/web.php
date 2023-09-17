@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Apis\DearApi;
 use App\Http\Apis\TestApi;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestingController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -35,11 +37,17 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::get('/testing', function () {
+Route::get('/testing', [TestingController::class, 'saleList'])->name('get.saleList');
+Route::get('/testing-demo', function () {
+    // return (new DearApi)->get('saleList');
+    // return (new DearApi)->get('saleList', [
+    //     'Page' => '5'
+    // ]);
+
     // return (new TestApi)->get('comments');
-    return (new TestApi)->get('comments', [
-        'postId' => '2'
-    ]);
+    // return (new TestApi)->get('comments', [
+    //     'postId' => '2'
+    // ]);
 });
 
 require __DIR__.'/auth.php';
