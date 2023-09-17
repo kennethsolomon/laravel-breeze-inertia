@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'dearinventory' => [
+        'api-auth-accountid' =>env('DEAR_ACCOUNT_ID'),
+        'api-auth-applicationkey' => env('DEAR_API_KEY'),
+    ]
+
 ];

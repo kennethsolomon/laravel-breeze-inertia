@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Apis\DearApi;
+use App\Http\Apis\TestApi;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestingController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -35,4 +38,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// DEMO
+// Route::get('/testing', [TestingController::class, 'deleteCategory'])->name('delete.category');
+// Route::get('/testing', [TestingController::class, 'addCategory'])->name('post.category');
+// Route::get('/testing', [TestingController::class, 'getSaleLists'])->name('get.saleList');
+// Route::get('/testing-demo', function () {
+    // return (new DearApi)->get('saleList');
+    // return (new DearApi)->get('saleList', [
+    //     'Page' => '5'
+    // ]);
+
+    // return (new TestApi)->get('comments');
+    // return (new TestApi)->get('comments', [
+    //     'postId' => '2'
+    // ]);
+// });
+
 require __DIR__.'/auth.php';
+
+
